@@ -24,8 +24,8 @@ basins, Natura2000, DVW districts/sectors, RIPARIAS study area) used to live in 
 databases.
 
 - `area_data/`: the source files (attribution notes in `area_data/credits.md`).
-- `area_data/belgian_municipalities/adminvector_4326.gpkg` (209 MB) is too large for git: it is attached to the
-  [`area-data-v1` release](https://github.com/riparias/early-alert-webapp/releases/tag/area-data-v1) instead.
+- `area_data/belgian_municipalities/adminvector_4326.gpkg` (209 MB) is too large for git: it is attached, zipped,
+  to the [`area-data-v1` release](https://github.com/riparias/early-alert-webapp/releases/tag/area-data-v1) instead.
 - `area_loaders/`: the custom management commands that imported the files GBIF Alert's generic `load_area`
   could not handle.
 
@@ -36,6 +36,6 @@ with `shared` set), and simple files can be loaded with `python manage.py load_a
 `belgian_provinces.shp`). Consider the loaders deprecated: they are kept only as a record of how the existing areas
 were built (tags, name formats, reprojection).
 
-If you really need to run one: copy the contents of `area_data/` (plus the gpkg from the release) to
+If you really need to run one: copy the contents of `area_data/` (plus the unzipped gpkg from the release) to
 `source_data/public_areas/` and the script to `dashboard/management/commands/` in a GBIF Alert checkout, then run
 it with `python manage.py <script name without .py>`. The scripts are kept unchanged and use those paths.
